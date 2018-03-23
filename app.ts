@@ -57,7 +57,7 @@ class CustomJavaRenderer extends JavaRenderer {
 }
 
 async function main(args: string[]) {
-    const lang = new AzureDBStaticSchemaTargetLanguage();
+    const lang = new CsharpEntityClassTargetLanguage();
 
     const cliOptions = parseCLIOptions(args, lang);
 
