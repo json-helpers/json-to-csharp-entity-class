@@ -34,11 +34,11 @@ import { StringTypeMapping } from "quicktype/dist/TypeBuilder";
 import {Option} from "quicktype/dist/RendererOptions";
 const unicode = require("unicode-properties");
 
-export class AzureDBStaticSchemaTargetLanguage extends TargetLanguage {
+export class CsharpEntityClassTargetLanguage extends TargetLanguage {
     private readonly _declareUnionsOption = new BooleanOption("declare-unions", "Declare unions as named types", false);
 
     constructor() {
-        super("AzureDB", ["azuredb"], "json");
+        super("EntityClass", ["entity"], "json");
     }
     protected getOptions(): Option<any>[] {
         return [];
@@ -56,7 +56,7 @@ export class AzureDBStaticSchemaTargetLanguage extends TargetLanguage {
         leadingComments: string[] | undefined,
         ...optionValues: any[]
     ) => ConvenienceRenderer {
-        return AzureDBStaticSchemaRenderer;
+        return CsharpEntityClassRenderer;
     }
 }
 
@@ -85,7 +85,7 @@ function simpleNameStyle(original: string, uppercase: boolean): string {
     );
 }
 
-class AzureDBStaticSchemaRenderer extends ConvenienceRenderer {
+class CsharpEntityClassRenderer extends ConvenienceRenderer {
     constructor(graph: TypeGraph, leadingComments: string[] | undefined, private readonly inlineUnions: boolean) {
         super(graph, leadingComments);
     }
@@ -122,9 +122,9 @@ class AzureDBStaticSchemaRenderer extends ConvenienceRenderer {
             },
             _anyType => "any",
             _nullType => "null",
-            _boolType => "boolean",
-            _integerType => "number",
-            _doubleType => "number",
+            _boolType => "bool",
+            _integerType => "int",
+            _doubleType => "int",
             _stringType => "string",
             arrayType => ["List<", this.sourceFor(arrayType.items), ">"],
             classType => this.nameForNamedType(classType),
