@@ -149,15 +149,12 @@ class CsharpEntityClassRenderer extends ConvenienceRenderer {
 
     private emitClass = (c: ClassType, className: Name) => {
          let count = c.properties.count();
+        this.emitLine("public class " + Name + " : " + "EntityData");
         this.emitLine("{");
         this.indent(() => {
             this.forEachClassProperty(c, "none", (name, _jsonName, p) => {
-                 const last = --count === 0;
-                if(!last){
-                this.emitLine("\"",name,"\"", p.isOptional ? "?" : "", ": \"", this.sourceFor(p.type) + "\",");
-                }else{
-                this.emitLine("\"",name,"\"", p.isOptional ? "?" : "", ": \"", this.sourceFor(p.type) + "\"");
-                }
+                this.emitLine("public " + this.sourceFor(p.type) + " " + name + " {get; set;}");
+                
             });
         });
         this.emitLine("}");
