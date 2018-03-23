@@ -13,9 +13,9 @@ import {
     nullableFromUnion,
     removeNullFromUnion,
     directlyReachableSingleNamedType
-} from "../Type";
-import { TypeGraph } from "../TypeGraph";
-import { Sourcelike, maybeAnnotated, modifySource } from "../Source";
+} from "quicktype/dist/Type";
+import { TypeGraph } from "quicktype/dist/TypeGraph";
+import { Sourcelike, maybeAnnotated, modifySource } from "quicktype/dist/Source";
 import {
     utf16LegalizeCharacters,
     utf16StringEscape,
@@ -23,14 +23,14 @@ import {
     combineWords,
     firstUpperWordStyle,
     camelCase
-} from "../Strings";
-import { intercalate, defined, assert, panic, StringMap } from "../Support";
-import { Name, DependencyName, Namer, funPrefixNamer } from "../Naming";
-import { ConvenienceRenderer, ForbiddenWordsInfo } from "../ConvenienceRenderer";
-import { TargetLanguage } from "../TargetLanguage";
-import { StringOption, EnumOption, Option } from "../RendererOptions";
-import { anyTypeIssueAnnotation, nullTypeIssueAnnotation } from "../Annotation";
-import { StringTypeMapping } from "../TypeBuilder";
+} from "quicktype/dist/Strings";
+import { intercalate, defined, assert, panic, StringMap } from "quicktype/dist/Support";
+import { Name, DependencyName, Namer, funPrefixNamer } from "quicktype/dist/Naming";
+import { ConvenienceRenderer, ForbiddenWordsInfo } from "quicktype/dist/ConvenienceRenderer";
+import { TargetLanguage } from "quicktype/dist/TargetLanguage";
+import { StringOption, EnumOption, Option } from "quicktype/dist/RendererOptions";
+import { anyTypeIssueAnnotation, nullTypeIssueAnnotation } from "quicktype/dist/Annotation";
+import { StringTypeMapping } from "quicktype/dist/TypeBuilder";
 
 const unicode = require("unicode-properties");
 
