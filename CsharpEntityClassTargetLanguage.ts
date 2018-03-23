@@ -306,7 +306,7 @@ export class CSharpRenderer extends ConvenienceRenderer {
                 } else {
                     this.emitDescription(description);
                     if (attribute !== undefined) {
-                        //this.emitLine(attribute);
+                        this.emitLine(attribute);
                     }
                     this.emitLine(property);
                 }
