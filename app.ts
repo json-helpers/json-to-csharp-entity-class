@@ -10,7 +10,7 @@ import { ClassType, ClassProperty, Type } from "quicktype/dist/Type";
 import { Name, FixedName } from "quicktype/dist/Naming";
 import { capitalize } from "quicktype/dist/Strings";
 import { parseCLIOptions, makeQuicktypeOptions, writeOutput } from "quicktype/dist/cli";
-import { CsharpEntityClassTargetLanguage } from "./CsharpEntityClassTargetLanguage"
+import { CsharpEntityClassTargetLanguage } from "./CsharpEntityClassTargetLanguage";
 class CustomJavaTargetLanguage extends JavaTargetLanguage {
     protected get rendererClass(): new (
         graph: TypeGraph,

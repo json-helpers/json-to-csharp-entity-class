@@ -1,8 +1,16 @@
-"use strict";
+#!/usr/bin/env ts-node
 
 import { OrderedSet, Map } from "immutable";
 import * as handlebars from "handlebars";
+import * as fs from "fs";
 
+import { Run, Options, quicktypeMultiFile } from "quicktype";
+import { TypeGraph } from "quicktype/dist/TypeGraph";
+import { ConvenienceRenderer } from "quicktype/dist/ConvenienceRenderer";
+import { ClassType, ClassProperty, Type } from "quicktype/dist/Type";
+import { Name, FixedName } from "quicktype/dist/Naming";
+import { capitalize } from "quicktype/dist/Strings";
+import { parseCLIOptions, makeQuicktypeOptions, writeOutput } from "quicktype/dist/cli";
 import {
     TypeKind,
     Type,
@@ -27,7 +35,7 @@ import {
 import { intercalate, defined, assert, panic, StringMap } from "quicktype/dist/Support";
 import { Name, DependencyName, Namer, funPrefixNamer } from "quicktype/dist/Naming";
 import { ConvenienceRenderer, ForbiddenWordsInfo } from "quicktype/dist/ConvenienceRenderer";
-import { TargetLanguage } from "quicktype/dist/TargetLanguage";
+import { CSharpTargetLanguage, CSharpRenderer } from "quicktype/dist/Language/CSharp";
 import { StringOption, EnumOption, Option } from "quicktype/dist/RendererOptions";
 import { anyTypeIssueAnnotation, nullTypeIssueAnnotation } from "quicktype/dist/Annotation";
 import { StringTypeMapping } from "quicktype/dist/TypeBuilder";
