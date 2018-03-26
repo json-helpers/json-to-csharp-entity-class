@@ -1,0 +1,81 @@
+diff --git a/package-lock.json b/package-lock.json
+index 1b801a5..292504c 100644
+--- a/package-lock.json
++++ b/package-lock.json
+@@ -1,6 +1,6 @@
+ {
+-  "name": "json-to-csharp-entity-class",
+-  "version": "0.0.1",
++  "name": "quicktype-custom",
++  "version": "1.0.1",
+   "lockfileVersion": 1,
+   "requires": true,
+   "dependencies": {
+@@ -723,9 +723,9 @@
+       }
+     },
+     "is-url": {
+-      "version": "1.2.2",
+-      "resolved": "https://registry.npmjs.org/is-url/-/is-url-1.2.2.tgz",
+-      "integrity": "sha1-SYkFpZO/R8wtnn9zg3K792lsfyY="
++      "version": "1.2.3",
++      "resolved": "https://registry.npmjs.org/is-url/-/is-url-1.2.3.tgz",
++      "integrity": "sha512-vmOHLvzbcnsdFz8wQPXj1lgI5SE8AUlUGMenzuZzRFjoReb1WB+pLt9GrIo7BTker+aTcwrjTDle7odioWeqyw=="
+     },
+     "is-windows": {
+       "version": "0.2.0",
+@@ -1168,7 +1168,7 @@
+       "integrity": "sha1-E+JtKK1rD/qpExLNO/cI7TUecjM="
+     },
+     "quicktype": {
+-      "version": "github:quicktype/quicktype#558a6e376f5c889491c5b6b77dd624cb2bd678a8",
++      "version": "github:quicktype/quicktype#dd8242d11118b566a576a625f04b796a3e7b6d5a",
+       "requires": {
+         "chalk": "2.3.0",
+         "command-line-args": "4.0.7",
+@@ -1176,7 +1176,7 @@
+         "graphql": "0.11.7",
+         "handlebars": "4.0.11",
+         "immutable": "4.0.0-rc.9",
+-        "is-url": "1.2.2",
++        "is-url": "1.2.3",
+         "js-base64": "2.4.3",
+         "lodash": "4.17.5",
+         "moment": "2.21.0",
+diff --git a/package.json b/package.json
+index 216dffa..dc70474 100644
+--- a/package.json
++++ b/package.json
+@@ -1,9 +1,13 @@
+ {
+-  "name": "json-to-csharp-entity-class",
+-  "version": "0.0.1",
+-  "main": "app.ts",
++  "name": "quicktype-custom",
++  "version": "1.0.1",
++  "main": "dist/app.js",
++  "bin": "dist/app.js",
++  "homepage": "https://github.com/quicktype/quicktype-custom-java-example",
++  "repository": "https://github.com/quicktype/quicktype-custom-java-example.git",
+   "scripts": {
+     "start": "ts-node app.ts",
++    "prepack": "tsc",
+     "test": "echo \"Error: no test specified\" && exit 1"
+   },
+   "license": "Apache-2.0",
+@@ -13,8 +17,12 @@
+     "typescript": "^2.6.2"
+   },
+   "dependencies": {
+-    "lodash": "^4.17.5",
+-    "quicktype": "github:quicktype/quicktype",
++    "quicktype": "quicktype/quicktype",
+     "unicode-properties": "^1.1.0"
+-  }
++  },
++  "files": [
++    "package.json",
++    "README.md",
++    "dist/**"
++  ]
+ }

@@ -13,16 +13,13 @@ import { capitalize } from "quicktype/dist/Strings";
 import { parseCLIOptions, makeQuicktypeOptions, writeOutput } from "quicktype/dist/cli";
 import {
     TypeKind,
-    Type,
     EnumType,
     UnionType,
-    ClassType,
     matchType,
     nullableFromUnion,
     removeNullFromUnion,
     directlyReachableSingleNamedType
 } from "quicktype/dist/Type";
-import { TypeGraph } from "quicktype/dist/TypeGraph";
 import { Sourcelike, maybeAnnotated, modifySource } from "quicktype/dist/Source";
 import {
     utf16LegalizeCharacters,
@@ -33,8 +30,8 @@ import {
     camelCase
 } from "quicktype/dist/Strings";
 import { intercalate, defined, assert, panic, StringMap } from "quicktype/dist/Support";
-import { Name, DependencyName, Namer, funPrefixNamer } from "quicktype/dist/Naming";
-import { ConvenienceRenderer, ForbiddenWordsInfo } from "quicktype/dist/ConvenienceRenderer";
+import { DependencyName, Namer, funPrefixNamer } from "quicktype/dist/Naming";
+import { ForbiddenWordsInfo } from "quicktype/dist/ConvenienceRenderer";
 import { CSharpTargetLanguage, CSharpRenderer } from "quicktype/dist/Language/CSharp";
 import { StringOption, EnumOption, Option } from "quicktype/dist/RendererOptions";
 import { anyTypeIssueAnnotation, nullTypeIssueAnnotation } from "quicktype/dist/Annotation";
