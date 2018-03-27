@@ -57,6 +57,9 @@ export class CSharpEntityClassTargetLanguage extends CSharpTargetLanguage {
     ) => ConvenienceRenderer {
         return CSharpEntityClassRenderer;
     }
+    protected superclassForType(_t: Type): Sourcelike | undefined {
+    return "EntityData";
+    }
 }
 
 export class CSharpEntityClassRenderer extends CSharpRenderer {
