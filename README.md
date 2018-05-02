@@ -29,7 +29,7 @@ namespace QuickType
 ```
 Because of the way this library was built, it is nearly as flexible as `quicktype`. Here is an example:
 ```
-npm start -- "comment.json" --namespace NewNamespace
+npm start -- "example/comment.json" --namespace NewNamespace
 ```
 These ```quicktype``` options can be used all over the place! Check out the [README](https://github.com/quicktype/quicktype/blob/master/README.md) for more examples that can be applied to this tool.
 
@@ -42,5 +42,5 @@ It has only been designed for the most basic types, so if you find a useful one 
 
 `npm install --only=dev`
 
-`npm start comment.json`
+`npm start example/comment.json`
 

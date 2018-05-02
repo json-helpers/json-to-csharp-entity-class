@@ -1,12 +1,11 @@
 {
   "name": "json-to-csharp-entity-class",
   "version": "0.1.1",
-  "main": "dist/app.js",
-  "bin": "dist/app.js",
+  "main": "example/app.ts",
   "homepage": "https://github.com/json-helpers/json-to-csharp-entity-class",
   "repository": "https://github.com/json-helpers/json-to-csharp-entity-class.git",
   "scripts": {
-    "start": "ts-node app.ts",
+    "start": "ts-node example/app.ts",
     "prepack": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -17,7 +16,7 @@
     "typescript": "^2.8.3"
   },
   "dependencies": {
-    "quicktype": "github:quicktype/quicktype",
+    "quicktype": "^13.0.3",
     "unicode-properties": "^1.1.0"
   },
   "files": [

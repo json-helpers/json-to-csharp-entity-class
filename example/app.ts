@@ -10,7 +10,7 @@ import { ClassType, ClassProperty, Type } from "quicktype/dist/Type";
 import { Name, FixedName } from "quicktype/dist/Naming";
 import { capitalize } from "quicktype/dist/Strings";
 import { parseCLIOptions, makeQuicktypeOptions, writeOutput } from "quicktype/dist/cli";
-import { CSharpEntityClassTargetLanguage } from "./CSharpEntityClassTargetLanguage"
+import { CSharpEntityClassTargetLanguage } from "../CSharpEntityClassTargetLanguage"
 
 async function main(args: string[]) {
     const lang = new CSharpEntityClassTargetLanguage();
