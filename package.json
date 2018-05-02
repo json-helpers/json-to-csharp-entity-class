@@ -1,10 +1,10 @@
 {
-  "name": "quicktype-custom",
-  "version": "1.0.1",
+  "name": "json-to-csharp-entity-class",
+  "version": "0.1.0",
   "main": "dist/app.js",
   "bin": "dist/app.js",
-  "homepage": "https://github.com/quicktype/quicktype-custom-java-example",
-  "repository": "https://github.com/quicktype/quicktype-custom-java-example.git",
+  "homepage": "https://github.com/json-helpers/json-to-csharp-entity-class",
+  "repository": "https://github.com/json-helpers/json-to-csharp-entity-class.git",
   "scripts": {
     "start": "ts-node app.ts",
     "prepack": "tsc",
