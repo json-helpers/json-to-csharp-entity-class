@@ -36,37 +36,31 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var fs = require("fs");
 var quicktype_1 = require("quicktype");
-var AzureDBStaticSchemaTargetLanguage_1 = require("AzureDBStaticSchemaTargetLanguage");
-function main() {
+var cli_1 = require("quicktype/dist/cli");
+var CSharpEntityClassTargetLanguage_1 = require("./CSharpEntityClassTargetLanguage");
+function main(args) {
     return __awaiter(this, void 0, void 0, function () {
-        var schema, lang, options, run, files;
+        var lang, cliOptions, quicktypeOptions, resultsByFilename;
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
-                    schema = fs.readFileSync("input.schema", "utf8");
-                    lang = new AzureDBStaticSchemaTargetLanguage_1.AzureDBStaticSchemaTargetLanguage();
-                    options = {
-                        lang: lang,
-                        sources: [{ name: "TopLevel", schema: schema }]
-                    };
-                    run = new quicktype_1.Run(options);
-                    return [4 /*yield*/, run.run()];
+                    lang = new CSharpEntityClassTargetLanguage_1.CSharpEntityClassTargetLanguage();
+                    cliOptions = cli_1.parseCLIOptions(args, lang);
+                    return [4 /*yield*/, cli_1.makeQuicktypeOptions(cliOptions)];
                 case 1:
-                    files = _a.sent();
-                    files.forEach(function (srr, filename) {
-                        console.log("// " + filename);
-                        console.log("//");
-                        for (var _i = 0, _a = srr.lines; _i < _a.length; _i++) {
-                            var line = _a[_i];
-                            console.log(line);
-                        }
-                    });
+                    quicktypeOptions = _a.sent();
+                    if (quicktypeOptions === undefined)
+                        return [2 /*return*/];
+                    quicktypeOptions.lang = lang;
+                    return [4 /*yield*/, quicktype_1.quicktypeMultiFile(quicktypeOptions)];
+                case 2:
+                    resultsByFilename = _a.sent();
+                    cli_1.writeOutput(cliOptions, resultsByFilename);
                     return [2 /*return*/];
             }
         });
     });
 }
-main();
+main(process.argv.slice(2));
 //# sourceMappingURL=app.js.map

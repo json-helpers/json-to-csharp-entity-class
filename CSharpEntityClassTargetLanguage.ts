@@ -13,11 +13,7 @@ import { parseCLIOptions, makeQuicktypeOptions, writeOutput } from "quicktype/di
 import {
     TypeKind,
     EnumType,
-    UnionType,
-    matchType,
-    nullableFromUnion,
-    removeNullFromUnion,
-    directlyReachableSingleNamedType
+    UnionType
 } from "quicktype/dist/Type";
 import { Sourcelike, maybeAnnotated, modifySource } from "quicktype/dist/Source";
 import {
@@ -57,7 +53,7 @@ export class CSharpEntityClassTargetLanguage extends CSharpTargetLanguage {
     ) => ConvenienceRenderer {
         return CSharpEntityClassRenderer;
     }
-    
+
 }
 
 export class CSharpEntityClassRenderer extends CSharpRenderer {
