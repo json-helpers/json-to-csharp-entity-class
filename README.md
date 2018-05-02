@@ -12,7 +12,7 @@ Example input:
 }
 ```
 
-[Example output](https://docs.microsoft.com/en-us/azure/app-service-mobile/app-service-mobile-dotnet-backend-how-to-use-server-sdk):
+[Example output](https://docs.microsoft.com/en-us/azure/app-service-mobile/app-service-mobile-dotnet-backend-how-to-use-server-sdk#define-table-controller):
 
 ```
 namespace QuickType
