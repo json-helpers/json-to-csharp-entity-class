@@ -12,12 +12,12 @@
   },
   "license": "Apache-2.0",
   "devDependencies": {
-    "@types/node": "^8.0.58",
+    "@types/node": "^8.10.11",
     "ts-node": "^4.0.1",
-    "typescript": "^2.6.2"
+    "typescript": "^2.8.3"
   },
   "dependencies": {
-    "quicktype": "quicktype/quicktype",
+    "quicktype": "github:quicktype/quicktype",
     "unicode-properties": "^1.1.0"
   },
   "files": [
