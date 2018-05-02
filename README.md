@@ -26,7 +26,11 @@ namespace QuickType
     }
 }
 ```
-Because of the way this library was built, it is nearly as extensible as `quicktype`.
+Because of the way this library was built, it is nearly as extensible as `quicktype`. Here is an example:
+```
+npm start -- "comment.json" --namespace NewNamespace
+```
+These ```quicktype``` options can be used all over the place! Check out the [README](https://github.com/quicktype/quicktype/blob/master/README.md) for more examples that can be applied to this tool.
 
 
 It has only been designed for the most basic types, so if you find a useful one that is missing please file a [GitHub issue](https://github.com/json-helpers/json-to-csharp-entity-class/issues/new), or feel free to contribute a new feature!
