@@ -27,7 +27,7 @@ namespace QuickType
     }
 }
 ```
-Because of the way this library was built, it is nearly as extensible as `quicktype`. Here is an example:
+Because of the way this library was built, it is nearly as flexible as `quicktype`. Here is an example:
 ```
 npm start -- "comment.json" --namespace NewNamespace
 ```
