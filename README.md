@@ -1,4 +1,5 @@
 # json-to-csharp-entity-class
+[![npm version](https://badge.fury.io/js/json-to-csharp-entity-class.svg)](https://badge.fury.io/js/json-to-csharp-entity-class)
 
 A [quicktype](https://github.com/quicktype/quicktype) library that generates simple C# EntityClasses from JSON.
 
